@@ -29,5 +29,5 @@
    shell: pgrep -u scaleworks -f hello.sh
    register: pid_result
 
- - name: Stop Converter
+ - name: Stop hello.sh
    shell: "sleep 5 && kill {{ pid_result.stdout }}"

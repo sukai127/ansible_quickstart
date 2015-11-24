@@ -40,7 +40,7 @@ If Ansible modules are the tools in your workshop, playbooks are your design pla
  - copy youself.txt to remote_host (**key:** role, extra-vars) 
  
  ```bash
-   	$ ansible-playbook -i host v2.yml --extra-vars "dest=hg_repository"
+   	$ ansible-playbook -i hosts v2.yml --extra-vars "dest=hg_repository"
  ```
  
 #Ansible 还能做什么(what can be done)
