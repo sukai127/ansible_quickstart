@@ -1,0 +1,8 @@
+master ansible_ssh_host="xxxxxxxxxxxxxx" ansible_ssh_user=xxxxxxxxxxxxx ansible_ssh_pass="xxxxxxxxxxxxxx"
+node01 ansible_ssh_host="xxxxxxxxxxxxxx" ansible_ssh_user=xxxxxxxxxxxxx ansible_ssh_pass="xxxxxxxxxxxxxx"
+node02 ansible_ssh_host="xxxxxxxxxxxxxx" ansible_ssh_user=xxxxxxxxxxxxx ansible_ssh_pass="xxxxxxxxxxxxxx"
+
+[remote_hosts]
+master
+node01
+node02

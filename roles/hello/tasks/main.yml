@@ -1,0 +1,33 @@
+---
+
+ # - name: copy file to remote-host
+ #   copy: src=hello.sh dest="{{ dest }}" owner=scaleworks group=scaleworks mode=0644
+
+ - name: create directory
+   file: 
+     path: "{{ dest }}" 
+     state: directory 
+
+ - name: copy file to remote-host
+   copy: 
+     src: hello.sh 
+     dest: "{{ dest }}" 
+
+ - name: change file mode
+   file: 
+     path: "{{ dest }}/hello.sh" 
+     owner: scaleworks
+     group: scaleworks
+     mode: 0755
+
+ - name: execute shell 
+   shell: nohup ./hello.sh & sleep 2
+   args:
+     chdir: "{{ dest }}/"
+
+ - name: Get process ID
+   shell: pgrep -u scaleworks -f hello.sh
+   register: pid_result
+
+ - name: Stop Converter
+   shell: "sleep 5 && kill {{ pid_result.stdout }}"

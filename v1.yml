@@ -1,0 +1,7 @@
+---
+
+- name: provision ci agent
+  hosts: node02 
+  tasks:
+    - name: copy file to remote-host 
+      yum: name=sl state=present
