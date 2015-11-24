@@ -23,7 +23,7 @@
 
  ```bash
    	$ ansible -i host node01 -m shell -a "echo helloworld"
-   	$ ansible -i host node01 -m shell -a "uname"
+   	$ ansible -i host node01 -m shell -a "uname -a"
  ```
 **Module:** `shell`, `copy`, `file`, `get_url`, `unarchive`, `yum`, `template`...
  - install sl (**key:** tasks,playbook)
