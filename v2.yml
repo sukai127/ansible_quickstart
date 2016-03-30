@@ -1,6 +1,6 @@
 ---
 
 - name: copy file
-  hosts: node05 
+  hosts: node01 
   roles:
     - hello

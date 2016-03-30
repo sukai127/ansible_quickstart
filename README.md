@@ -1,10 +1,10 @@
-#Ansible 是什么(what it is)
+# What is Ansible
 
->####Ansible: ansible is an IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates.  
-####If needed, Ansible can easily connect with Kerberos, LDAP, and other centralized authentication management systems.  
---[http://docs.ansible.com/ansible/index.html](http://docs.ansible.com/ansible/index.html)
+>#### Ansible: ansible is an IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates.  
+#### If needed, Ansible can easily connect with Kerberos, LDAP, and other centralized authentication management systems.  
+[http://docs.ansible.com/ansible/index.html](http://docs.ansible.com/ansible/index.html)
 
-#Ansible 怎么安装(how to install)
+# How to install Ansible
 
  - Mac OS
  
@@ -18,14 +18,16 @@
  	$ sudo yum install ansible
  ```
  
-#Ansible 怎么使用(how to use)
+# How to use Ansible
  - helloworld (**key:**  inventory, module, host, group)
 
  ```bash
-   	$ ansible -i host node01 -m shell -a "echo helloworld"
-   	$ ansible -i host node01 -m shell -a "uname -a"
+  $ ansible -i host node01 -m shell -a "echo helloworld"
+
+  $ ansible -i host node01 -m shell -a "uname -a"
  ```
 **Module:** `shell`, `copy`, `file`, `get_url`, `unarchive`, `yum`, `template`...
+[http://docs.ansible.com/ansible/list_of_all_modules.html](http://docs.ansible.com/ansible/list_of_all_modules.html)
  - install sl (**key:** tasks,playbook)
  
  ```bash
@@ -43,6 +45,6 @@ If Ansible modules are the tools in your workshop, playbooks are your design pla
    	$ ansible-playbook -i hosts v2.yml --extra-vars "dest=hg_repository"
  ```
  
-#Ansible 还能做什么(what can be done)
+# What else can Ansible do
  - ansible-galaxy
  - ansible-vault

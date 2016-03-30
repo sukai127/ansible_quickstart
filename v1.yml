@@ -1,7 +1,7 @@
 ---
 
-- name: provision ci agent
+- name: install sl
   hosts: node02 
   tasks:
-    - name: copy file to remote-host 
+    - name: install sl
       yum: name=sl state=present
