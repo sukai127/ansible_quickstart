@@ -1,0 +1,55 @@
+---
+
+
+ - name: install java 1.7
+   yum: 
+     name: java-1.7.0-openjdk-devel.x86_64 
+     state: present
+   sudo: yes
+
+ - name: install unzip
+   yum: 
+     name: unzip
+     state: present
+   sudo: yes
+
+ - name: create ansible directory
+   file: 
+     path: /home/vagrant/ansible
+     state: directory
+     mode: 0755
+
+ - stat: path=/home/vagrant/ansible/jetty-9.2.15.zip
+   register: jetty_zip
+   
+ - stat: path=/home/vagrant/ansible/jetty-distribution-9.2.15.v20160210
+   register: jetty_folder
+
+ - name: download jetty
+   get_url: 
+     url:  http://download.eclipse.org/jetty/9.2.15.v20160210/dist/jetty-distribution-9.2.15.v20160210.zip
+     dest: "/home/vagrant/ansible/jetty-9.2.15.zip"
+   when: jetty_zip.stat.exists == False
+     
+ - name: decompress package
+   unarchive:
+     src: /home/vagrant/ansible/jetty-9.2.15.zip
+     dest: /home/vagrant/ansible
+     copy: no
+   when: jetty_folder.stat.exists == False
+
+ - name: create ROOT directory
+   file: 
+     path: /home/vagrant/ansible/jetty-distribution-9.2.15.v20160210/webapps/ROOT
+     state: directory
+   when: jetty_folder.stat.exists == False
+     
+ - name: copy index.html
+   copy:
+     src: index.html
+     dest: /home/vagrant/ansible/jetty-distribution-9.2.15.v20160210/webapps/ROOT
+     mode: 0755
+ 
+ - name: restart jetty server
+   command: nohup /home/vagrant/ansible/jetty-distribution-9.2.15.v20160210/bin/jetty.sh restart & sleep 5
+   

@@ -1,7 +1,7 @@
 ---
 
 - name: install sl
-  hosts: node02 
+  hosts: remote
   tasks:
     - name: install sl
       yum: name=sl state=present

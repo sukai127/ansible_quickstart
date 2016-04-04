@@ -2,7 +2,7 @@ node01 ansible_ssh_host="192.168.33.31" ansible_ssh_user=vagrant ansible_ssh_pas
 node02 ansible_ssh_host="192.168.33.32" ansible_ssh_user=vagrant ansible_ssh_pass="vagrant"
 node03 ansible_ssh_host="192.168.33.33" ansible_ssh_user=vagrant ansible_ssh_pass="vagrant"
 
-[remote_hosts]
+[remote]
 node01
 node02
 node03

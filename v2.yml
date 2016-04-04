@@ -1,6 +1,6 @@
 ---
 
-- name: copy file
-  hosts: node01 
+- name: deploy webApp
+  hosts: remote
   roles:
-    - hello
+    - webApp
