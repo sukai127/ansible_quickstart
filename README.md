@@ -41,12 +41,12 @@
 
   $ ansible -i hosts node01 -m shell -a "uname -a"
  ```
-**Module:** `shell`, `copy`, `file`, `get_url`, `unarchive`, `yum`, `template`...
+**Module:** `shell`, `copy`, `file`, `get_url`, `unarchive`, `yum`...
 [http://docs.ansible.com/ansible/list_of_all_modules.html](http://docs.ansible.com/ansible/list_of_all_modules.html)
  - install sl (**key:** tasks,playbook)
  
  ```bash
-   	$ ansible -i hosts node01 -m yum -a "name=sl state=present|latest|absent"
+   	$ ansible -i hosts node01 -m yum -a "name=sl state=present|latest|absent" --sudo
  ```
  ```bash
    	$ ansible-playbook -i hosts v1.yml
