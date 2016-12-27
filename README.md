@@ -64,3 +64,5 @@ If Ansible modules are the tools in your workshop, playbooks are your design pla
  - ansible-galaxy
  - ansible-vault
 
+
+
